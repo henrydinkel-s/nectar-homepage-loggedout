@@ -1,0 +1,560 @@
+/* ==========================================================================
+   Colours
+   ========================================================================== */
+
+//Putty
+$putty: #f3f0ec;
+
+//Purples
+$purple: #8223fa;
+$darkest-purple: #38005c;
+$darker-purple: #4a0983;
+$dark-purple: #6c18cb;
+$light-purple: #994bfb;
+$lighter-purple: #c69afd;
+$lightest-purple: #f3e9ff;
+
+//Mono
+$white: #ffffff;
+$black: #000000;
+$mono-darker: #26212f;
+$mono-dark: #3f384c;
+$mono-medium: #726a82;
+$mono-light: #d8d4e0;
+$mono-lighter: #f2f1f5;
+
+/* ==========================================================================
+   Base styles
+   ========================================================================== */
+
+// Mobile width
+$mob-width: 400px;
+// Mobile margin
+$mob-margin: 16px;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'italian_plate_no1_expandedRg', sans-serif;
+  font-size: 62.5%;
+  color: $mono-dark;
+}
+
+body {
+  background: $putty;
+  position: reletive;
+  font-size: 14px;
+  line-height: 18px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+}
+
+// Selection
+::-moz-selection {
+  background: $lightest-purple;
+  text-shadow: none;
+}
+
+::selection {
+  background: $lightest-purple;
+  text-shadow: none;
+}
+
+// Media
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+img {
+  object-fit: cover;
+}
+
+// Links
+
+a:link,
+a:visited {
+  font-family: 'italian_plate_no1_expandedBd', sans-serif;
+  font-size: 1.7rem;
+  line-height: 2.4rem;
+  text-decoration: underline;
+  color: #8223fa;
+  padding-top: 20px;
+  display: block;
+}
+
+a:hover {
+  color: #38005c;
+}
+
+a:active {
+  color: #8223fa;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+//Headings function
+@function headings($from: 1, $to: 6) {
+  @if $from == $to {
+    @return 'h#{$from}';
+  } @else {
+    @return 'h#{$from},' + headings($from + 1, $to);
+  }
+}
+
+//Headings
+#{headings(1,6)} {
+  margin: 0;
+}
+
+h1 {
+  font-family: 'italian_plate_no1_expandedXBd', sans-serif;
+  font-size: 3.1rem;
+  line-height: 4rem;
+  margin-bottom: 16px;
+  color: $darker-purple;
+}
+
+h2 {
+  font-family: 'italian_plate_no1_expandedBd', sans-serif;
+  font-size: 2.5rem;
+  line-height: 3.2rem;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-family: 'italian_plate_no1_expandedBd', sans-serif;
+  font-size: 2.1rem;
+  line-height: 2.8rem;
+}
+
+h4 {
+  font-family: 'italian_plate_no1_expandedRg', sans-serif;
+  font-size: 1.9rem;
+  line-height: 2.6rem;
+  margin-bottom: 8px;
+}
+h4 span {
+  font-family: 'italian_plate_no1_expandedXBd', sans-serif;
+}
+
+h5 {
+  font-family: 'italian_plate_no1_expandedRg', sans-serif;
+  font-size: 1.7rem;
+  line-height: 2.4rem;
+  margin-bottom: 8px;
+}
+h5 span {
+  font-family: 'italian_plate_no1_expandedXBd', sans-serif;
+}
+
+p {
+  font-size: 1.7rem;
+  line-height: 2.4rem;
+  margin: 0px;
+  color: $mono-dark;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+button {
+  cursor: pointer;
+  font-family: 'italian_plate_no1_expandedBd', sans-serif;
+  font-size: 1.5rem;
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+
+.underline-cta {
+  text-decoration: underline;
+}
+
+//Purple
+.primary-btn {
+  background: $purple;
+  border: none;
+  margin-top: 32px;
+  padding: 16px 24px;
+  color: $white;
+}
+
+.secondary-btn {
+  height: 48px;
+  padding: 8px 24px;
+  color: $purple;
+  border: 2px solid $purple;
+}
+
+.tertiary-btn {
+  border: none;
+  background: none;
+  height: 48px;
+  margin-top: 8px;
+  padding: 8px 24px;
+  color: $purple;
+}
+
+//White
+.secondary-btn-white {
+  border: none;
+  background: none;
+  height: 48px;
+  padding: 8px 24px;
+  color: $white;
+  border: 2px solid $white;
+}
+
+.tertiary-btn-white {
+  border: none;
+  background: none;
+  height: 48px;
+  margin-top: 8px;
+  padding: 8px 24px;
+  color: $white;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.brand-title {
+  font-family: 'italian_plate_no1_expandedBd', sans-serif;
+  max-width: $mob-width;
+  padding-top: 44px;
+  opacity: 0;
+  color: $darker-purple;
+  text-align: center;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  font-size: 1.9rem;
+
+  animation: fade 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -2.8s);
+
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.arrow {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  margin-top: 16px;
+  margin-left: 16px;
+  background-color: $white;
+  border-radius: 12px;
+  z-index: 3;
+
+  animation: move 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -2.8s);
+
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.arrow i {
+  color: $purple;
+  font-size: 20px;
+}
+
+//Mask
+
+.mask {
+  max-width: $mob-width + ($mob-margin * 2);
+  height: 24px;
+  position: fixed;
+  background-color: $putty;
+  margin: auto;
+  padding: 0 $mob-margin;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.inverted-border-radius-l {
+  position: relative;
+  height: 16px;
+  width: 50%;
+  background-color: $putty;
+  display: inline-block;
+}
+
+.inverted-border-radius-l::before {
+  content: '';
+  position: absolute;
+
+  background-color: transparent;
+  bottom: -50px;
+  height: 50px;
+  width: 24px;
+  border-top-left-radius: 24px;
+  box-shadow: 0 -24px 0 0 $putty;
+}
+
+.inverted-border-radius-r {
+  position: relative;
+  height: 16px;
+  width: 50%;
+  background-color: $putty;
+  float: right;
+}
+
+.inverted-border-radius-r::before {
+  content: '';
+  position: absolute;
+  background-color: transparent;
+  bottom: -50px;
+  right: 0px;
+  height: 50px;
+  width: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: 0 -24px 0 0 $putty;
+}
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.wrapper {
+  padding: 0 $mob-margin;
+  margin-bottom: 48px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.header {
+  height: auto;
+  background: #f3f0ec;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation {
+  position: relative;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 3;
+}
+
+.navigation button {
+  width: auto;
+  margin-top: 16px;
+}
+.header img {
+  margin-top: 16px;
+}
+
+main {
+  max-width: $mob-width;
+  margin: 80px auto;
+}
+
+.content-card {
+  border-radius: 24px;
+  background: $white;
+  margin-bottom: $mob-margin;
+  overflow: hidden;
+}
+.content {
+  width: 100%;
+  text-align: center;
+  padding: 24px 24px;
+}
+
+.content p {
+  padding: 0 32px 24px 32px;
+}
+
+.dark-p {
+  background: $darker-purple;
+  color: $white;
+}
+
+.dark-p h3 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.dark-p h1 {
+  color: $white;
+}
+
+.dark-p img {
+  margin-top: 32px;
+}
+
+.section-title {
+  color: $darker-purple;
+  margin-top: 56px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+//Card content
+.brand-mark {
+  max-width: 45%;
+  margin: 16px 0;
+}
+
+.hero-image {
+  width: 100%;
+  background-color: $darker-purple;
+}
+
+.article-image {
+  width: 100%;
+  height: auto;
+}
+
+.brand-content {
+  border-radius: 24px;
+  background: $purple;
+  margin-bottom: $mob-margin;
+  overflow: auto;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-content h2 {
+  color: $white;
+  text-align: center;
+}
+
+// Tab content
+
+.content-tabs {
+  border-radius: 24px;
+  background: $purple;
+  margin-bottom: $mob-margin;
+  overflow: auto;
+  width: 100%;
+}
+
+// Spend Mod
+
+.spend-content {
+  position: relative;
+  width: 100%;
+  height: 431px;
+  text-align: center;
+  padding: 24px 48px;
+  overflow: hidden;
+  // background: grey;
+  // background-image: url(../../img/bg-image.png);
+  // background-repeat: no-repeat;
+  // background-position: center center;
+  // background-size: cover;
+}
+.spend-content > button {
+  width: auto;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.bg-pepper {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.bg-popcorn {
+  position: absolute;
+  left: -60px;
+  bottom: -40px;
+}
+
+.bg-game {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.bg-headphones {
+  position: absolute;
+  right: -60px;
+  bottom: -30px;
+}
+
+// Spend slider
+.spend-slider {
+  margin-top: 150px;
+  max-width: 100%;
+  z-index: 2;
+}
+
+.slick-track {
+  overflow: hidden;
+}
+
+.text-box {
+  width: 300px;
+  height: auto;
+}
+.text-box h2 {
+  color: $white;
+}
+
+// Partner slider
+.spend-brands {
+  width: 100%;
+  height: auto;
+  padding: 16px 0 16px 16px;
+  background: $dark-purple;
+}
+
+.partner-slider {
+  max-width: 100%;
+}
+
+.slick-list {
+  overflow: visible;
+}
+
+.box {
+  width: 150px;
+  height: 80px;
+  background: $white;
+  border-radius: 12px;
+  margin: 0 8px;
+  position: relative;
+}
+
+.box img {
+  width: 100%;
+  padding: 0 32px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}

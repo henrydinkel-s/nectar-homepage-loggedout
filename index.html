@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Page Template - Nectar</title>
+    <!-- Fonts -->
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/icon.css">
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="mask">
+  <div class="header">
+    <img src="img/nectar-logo.svg" alt="" height="48">
+    <div class="navigation">
+      <button class="tertiary-btn">Help</button>
+      <button class="secondary-btn">Sign in</button>
+    </div>
+  </div>
+  <div class="inverted-border-radius-l"></div>
+  <div class="inverted-border-radius-r"></div>
+</div>
+
+<main class="main">
+
+  <!-- Hero card -->
+  <div class="content-card">
+    
+    <div class="content dark-p">
+      <h3>Join over 18 million<br/>Nectar Shoppers</h3>
+      <h1>For little shopping rewards every day</h1>
+      <button class="primary-btn">Join Nectar</button>
+      <img src="img/store-badges.svg" alt="" width="90%">
+    </div>
+    <div class="hero-image">
+      <img
+        src="img/hero-phone.png"
+        alt="" width="100%">
+    </div>
+  </div>
+
+  <!-- Brand mod --> 
+  <div class="brand-content">
+    <h2>Brand mod</h2>
+  </div>
+
+  <!-- Collect cards -->
+
+  <div class="section-title">
+      <h2>Loads of ways to collect</h2>
+  </div>
+
+  <div class="content-card">
+      <div class="article-image">
+          <img src="img/collect-01.png" alt="" width="100%">
+      </div>
+
+      <div class="content">
+          <h2>Collect points with personalised offers from Sainsbury’s</h2>
+          <p>Get weekly offers on things you love to buy most</p>
+      </div>
+  </div>
+
+  <div class="content-card">
+    <div class="article-image">
+      <img src="img/collect-02.png" alt="" width="100%">
+    </div>
+  
+    <div class="content">
+      <h2>Collect points with personalised offers from Sainsbury’s</h2>
+      <p>Get weekly offers on things you love to buy most</p>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="article-image">
+      <img src="img/collect-03.png" alt="" width="100%">
+    </div>
+  
+    <div class="content">
+      <h2>Collect points with personalised offers from Sainsbury’s</h2>
+      <p>Get weekly offers on things you love to buy most</p>
+    </div>
+  </div>
+
+<!-- More brands -->
+
+  <div class="section-title">
+    <h2>Loads of ways to spend</h2>
+  </div>
+
+  <!-- Spend Mod -->
+  <div class="content-tabs">
+    <div class="spend-content">
+      <div class="spend-slider">
+        <div class="text-box">
+          <h2>Spend points on<br/>that perfect gift for someone</h2>
+        </div>
+        <div class="text-box">
+          <h2>Spend points on<br/>your weekly shop with Sainsbury’s</h2>
+        </div>
+        <div class="text-box">
+          <h2>Spend points on<br/>a holiday with Nectar Hotels</h2>
+        </div>
+        <div class="text-box">
+          <h2>Spend points on<br/>a flight away</h2>   
+        </div>
+      </div>
+      <button class="secondary-btn-white">Find out more</button>
+      <img class="bg-pepper" src="img/bg-pepper.png" alt="" width="150px">
+      <img class="bg-popcorn" src="img/bg-popcorn.png" alt="" width="210px">
+      <img class="bg-headphones" src="img/bg-headphones.png" alt="" width="200px">
+      <img class="bg-game" src="img/bg-game.png" alt="" width="220px">
+    </div>
+    <div class="spend-brands">
+      <div class="partner-slider">
+        <div class="box"><img src="img/brand-argos.svg" alt=""></div>
+        <div class="box"><img src="img/brand-ebay.svg" alt=""></div>
+        <div class="box"><img src="img/brand-esso.svg" alt=""></div>
+        <div class="box"><img src="img/brand-sky.svg" alt=""></div>
+      </div>
+    </div>
+  </div>
+  
+
+</main>
+</div>
+
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.spend-slider').slick({
+      autoplay: true,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      cssEase: 'linear',
+      arrows: false,
+      adaptiveHeight: true,
+    });
+    $('.partner-slider').slick({
+      infinite: false,
+      slidesToShow: 2,
+      arrows: false,
+      centerMode: false,
+      variableWidth: true,
+      responsive: [
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+          }
+        }
+      ]
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
