@@ -221,6 +221,10 @@ button {
   color: $white;
 }
 
+.primary-btn:hover {
+  background: $dark-purple;
+}
+
 .secondary-btn {
   height: 48px;
   padding: 8px 24px;
@@ -407,7 +411,7 @@ button {
   margin-top: 16px;
 }
 
-.navigation > .tertiary-btn {
+.navigation > .secondary-btn {
   margin-right: 8px;
 }
 
