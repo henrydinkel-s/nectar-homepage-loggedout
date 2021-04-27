@@ -156,10 +156,7 @@ button {
   padding: 8px 24px;
   color: #8223fa;
   border: 2px solid #8223fa;
-}
-
-.secondary-btn:hover {
-  background: rgba(130, 35, 250, 0.1);
+  background: none;
 }
 
 .tertiary-btn {
@@ -169,10 +166,6 @@ button {
   margin-top: 8px;
   padding: 8px 24px;
   color: #8223fa;
-}
-
-.tertiary-btn:hover {
-  background: rgba(130, 35, 250, 0.1);
 }
 
 .secondary-btn-white {
@@ -358,10 +351,6 @@ button {
 .navigation button {
   width: auto;
   margin-top: 16px;
-}
-
-.navigation > .tertiary-btn {
-  margin-right: 8px;
 }
 
 .header img {
